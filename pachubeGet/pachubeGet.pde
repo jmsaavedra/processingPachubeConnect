@@ -1,7 +1,18 @@
+/*
+example to read a datatstream
+uses HTTPClient and GET
+can return XML, CSV, or JSON
+
+http://jos.ph 
+Feb 2012
+*/
+
 import processing.net.*;
 
 Client c;
 String data;
+
+XMLELement myData;
 
 //parsonscollab API key:  JI129Qd1q0Mb2napu8kosXSTQkPtMX5iIFfdV5clhcc
 String ApiKey = "7HsgaVRMCZ5FOSGypykT72YyKvKSAKxQbXdIanBxeEFBYz0g";
