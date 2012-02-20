@@ -11,8 +11,7 @@ import processing.net.*;
 
 Client c;
 String data;
-
-XMLELement myData;
+//XMLElement xmlData;
 
 //parsonscollab API key:  JI129Qd1q0Mb2napu8kosXSTQkPtMX5iIFfdV5clhcc
 String ApiKey = "7HsgaVRMCZ5FOSGypykT72YyKvKSAKxQbXdIanBxeEFBYz0g";
@@ -51,7 +50,8 @@ void getData() {
 void checkForResponse() {
   if (c.available() > 0) { // If there's incoming data from the client...
     println(">>> RECEIVED RESPONSE: ");
-    data = c.readString(); // ...then grab it 
+    data = c.readString(); // ...then grab it
+    //xmlData = data;
     println(data); //and print it
   }
 }
