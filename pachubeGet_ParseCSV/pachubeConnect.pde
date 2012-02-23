@@ -1,7 +1,6 @@
 
 void getData() {
   println(">>> SEND GET <<<\n");
-
   c.write("GET /v2/feeds/" + feedID + ".csv HTTP/1.1\n"); // returns CSV
   c.write("Host: api.pachube.com\n"); // Be polite and say who we are
   c.write("X-PachubeApiKey: " + ApiKey + "\n");
@@ -43,6 +42,6 @@ void parseData(String data) {
       }
     }
     assignValues();
-  }
+  } else println(">>> incomplete response! <<<");
 }
 
