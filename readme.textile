@@ -1,8 +1,7 @@
-Processing to and from Pachube Examples
+h2. Processing to and from Pachube Examples
 
-PachubeGet
-	- example to retrieve CSV, JSON, and XML data as Strings
+h3. PachubeGet
+	* example to retrieve CSV, JSON, and XML data as Strings
 	
-PachubeGet_parseCSV
-	- example to parse datastream name (String), value (float), and time updated (String)
-	  from CSV
+h3. PachubeGet_parseCSV
+	* example to parse datastream name (String), value (float), and time updated (String) from CSV
