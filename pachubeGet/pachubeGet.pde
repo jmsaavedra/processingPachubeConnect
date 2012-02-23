@@ -1,13 +1,17 @@
 /*
 example to read a datatstream
-uses HTTPClient and GET
-can return XML, CSV, or JSON
-
-http://jos.ph 
-Feb 2012
-*/
+ uses HTTPClient and GET
+ can return XML, CSV, or JSON
+ 
+ http://jos.ph 
+ Feb 2012
+ */
 
 import processing.net.*;
+import proxml.*;
+
+XMLInOut xmlData; 
+XMLElement eeml;
 
 Client c;
 String data;
@@ -21,6 +25,16 @@ void setup() {
   size(500, 500);
   background(50);
   fill(200);
+
+  xmlData = new XMLInOut(this);
+  try {
+    xmlData.loadElement("myData.xml");
+  }
+  catch(Exception e) {
+    //if the xml file could not be loaded it has to be created
+    xmlEvent(new XMLElement("eeml"));
+  }
+  
   c = new Client(this, "api.pachube.com", 80); // Connect to server on port 80
   getData(); //call the get data function once right off the bat
 }
@@ -50,8 +64,8 @@ void getData() {
 void checkForResponse() {
   if (c.available() > 0) { // If there's incoming data from the client...
     println(">>> RECEIVED RESPONSE: ");
-    data = c.readString(); // ...then grab it
-    //xmlData = data;
+    //data = c.readString(); // ...then grab it
+    xmlData = c.read();
     println(data); //and print it
   }
 }
